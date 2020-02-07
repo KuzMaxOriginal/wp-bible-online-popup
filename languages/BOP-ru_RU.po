@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bible-online-"
 "popup\n"
 "POT-Creation-Date: 2020-02-07T09:28:44+00:00\n"
-"PO-Revision-Date: 2020-02-07 12:55+0300\n"
+"PO-Revision-Date: 2020-02-07 16:59+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #. Plugin Name of the plugin
 msgid "Bible Online Popup"
-msgstr ""
+msgstr "Всплывающие стихи из Библии"
 
 #. Description of the plugin
 msgid "Popup Bible's verses with Bible Online"
