@@ -1,0 +1,1 @@
+A WordPress plugin based on BibleOnline.ru API, that allows you to make popping-up Bible passages on your website.
