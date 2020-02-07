@@ -83,7 +83,7 @@ class MySettingsPage {
     }
 
     public function print_general_section_info() {
-        print __('Update your preferences here.');
+        print __('Update your preferences here.', "BOP");
     }
 
     public function get_translations() {

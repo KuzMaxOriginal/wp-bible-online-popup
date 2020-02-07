@@ -34,22 +34,11 @@ function add_scripts() {
     wp_enqueue_style('bop-spinner', plugins_url('css/spinner.css', __FILE__));
 }
 
-function display_admin_settings() {
-
+function bop_load_plugin_textdomain() {
+    load_plugin_textdomain('BOP', FALSE, basename(dirname(__FILE__)) . '/languages/');
 }
 
-function add_admin_menu() {
-    add_submenu_page(
-        "options-general.php",
-        __('Bible Online Popup', 'bop'),
-        __('Bible Online Popup', 'bop'),
-        'administrator',
-        'bible-online-popup',
-        'display_admin_settings'
-    );
-}
-
-//add_action('admin_menu', 'add_admin_menu', 9);
+add_action('plugins_loaded', 'bop_load_plugin_textdomain');
 add_action('wp_enqueue_scripts', 'add_scripts');
 
 add_shortcode('bible_popup', 'bible_popup_func');
