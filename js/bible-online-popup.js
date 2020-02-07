@@ -1,5 +1,6 @@
 jQuery(function ($) {
     let popup_width = 400;
+    let popup_padding = 8;
     let spinner = '<div id="floatingCirclesG">' +
         '<div class="f_circleG" id="frotateG_01"></div>' +
         '<div class="f_circleG" id="frotateG_02"></div>' +
@@ -12,7 +13,7 @@ jQuery(function ($) {
         '</div>';
 
     let getPopupWidth = function () {
-        return Math.min(popup_width, $(window).width());
+        return Math.min(popup_width, $(window).width() - popup_padding * 2);
     };
 
     $(".bop-ref").mouseenter(function () {
@@ -21,13 +22,16 @@ jQuery(function ($) {
         let $popup_loading = $('<div class="bop-popup-loading">' + spinner + '</div>');
         $popup.append($popup_loading);
 
+        let $popup_close = $('<div class="bop-popup-close"></div>');
+        $popup.append($popup_close)
+
         // Calculate position
 
-        let left = $(this).offset().left;
+        let left = Math.max($(this).offset().left, popup_padding);
         let out_of_bounds = $(window).width() - (left + getPopupWidth());
 
         if (out_of_bounds < 0) {
-            left += out_of_bounds;
+            left += out_of_bounds - popup_padding;
         }
 
         $popup.css({
@@ -83,5 +87,9 @@ jQuery(function ($) {
         if (closeTimer) {
             closeTimer = clearTimeout(closeTimer);
         }
+    });
+
+    $(document).on("click", ".bop-popup-close", function () {
+       $(this).parent(".bop-popup").remove();
     });
 });

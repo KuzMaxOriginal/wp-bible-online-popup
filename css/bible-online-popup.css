@@ -24,11 +24,8 @@
 
 .bop-popup-loading {
     margin: 8px auto;
-    /*background-image: url(../assets/loader.png);*/
-    /*background-size: contain;*/
     width: 48px;
     height: 48px;
-    /*background-position: center center;*/
 }
 
 .bop-popup-title {
@@ -52,4 +49,16 @@
     vertical-align: super;
     font-size: smaller;
     color: #9f3819;
+}
+
+.bop-popup-close {
+    width: 14px;
+    height: 14px;
+    background-image: url(../assets/close.svg);
+    background-position: center center;
+    background-size: contain;
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    cursor: pointer;
 }
