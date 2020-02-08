@@ -5,7 +5,7 @@
  * Description: Popup Bible's verses with Bible Online
  * Version: 1.0.0
  * Author: Maksim Kuzmin
- * License: GPL2
+ * License: GPLv3
  * Text Domain: BOP
  * Domain Path: /languages/
  */
