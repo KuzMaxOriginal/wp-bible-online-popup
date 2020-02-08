@@ -46,6 +46,10 @@
     color: var(--bop-color-primary) !important;
 }
 
+.bop-popup-title a:not([href]) {
+    text-decoration: none !important;
+}
+
 .bop-popup-content {
     display: none;
     padding: 8px 16px;

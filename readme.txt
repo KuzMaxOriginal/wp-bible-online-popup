@@ -21,9 +21,35 @@ You can also create references manually, by using [bible_popup] shortcode.
 
 Examples:
 
-* [bible_online]John 3:5-7[/bible_online]
-* [bible_online query=\"John 3:5-7\"]some text[/bible_online]
-* [bible_online trans=\"kjv\"]John 3:5-7[/bible_online]
+* [bible_popup]John 3:5-7[/bible_popup]
+* [bible_popup query=\"John 3:5-7\"]some text[/bible_popup]
+* [bible_popup trans=\"kjv\"]John 3:5-7[/bible_popup]
+
+### Improtant notice - known issues
+
+For reasons that are not in charge of developer of this plugin, currently there are not all
+of the translations available on BibleOnline.ru for browser reading, that you can
+use in plugin. Also, unfortunately, there's no English version provided for AJAX yet.
+
+Currently available translations:
+
+* Русский синодальный перевод (Протестантская редакция)
+* Русский синодальный перевод (Православная редакция)
+* Русский синодальный перевод (Юбилейное издание)
+* Церковнославянский перевод (Гражданский шрифт)
+* Deutsche Luther
+* Беларускі пераклад
+* Traducción al español
+* Traduction française
+* Ελληνική μετάφραση
+* Traduzione italiana
+* Tradução português
+* Türkçe çeviri
+* 中文 汉译
+* Biblia Tysiąclecia
+
+Also, not for every translation the book name will be translated. Mostly it appears in
+Russian.
 
 == Installation ==
 Just upload the plugin and follow WordPress installation instructions. After installation and activation, go to Bible Online Popup settings page under \"Settings\" admin menu and adjust preferences.

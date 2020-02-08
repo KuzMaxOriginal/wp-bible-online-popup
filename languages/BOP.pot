@@ -40,3 +40,6 @@ msgstr ""
 
 msgid "Bible Online Popup Settings"
 msgstr ""
+
+msgid "Make a link to BibleOnline.ru from Bible's reference"
+msgstr ""

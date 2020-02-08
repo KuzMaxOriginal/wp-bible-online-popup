@@ -80,6 +80,14 @@ class MySettingsPage {
             'bop-settings',
             'section_general'
         );
+
+        add_settings_field(
+            'make_link',
+            __('Make a link to BibleOnline.ru from Bible\'s reference', 'BOP'),
+            array($this, 'make_link_callback'),
+            'bop-settings',
+            'section_general'
+        );
     }
 
     public function print_general_section_info() {
@@ -91,13 +99,13 @@ class MySettingsPage {
             "rst66" => "Русский синодальный перевод (Протестантская редакция)",
             "rst78" => "Русский синодальный перевод (Православная редакция)",
             "rst-jbl" => "Русский синодальный перевод (Юбилейное издание)",
-            "lut" => "Перевод свящ. Леонида Лутковского",
+//            "lut" => "Перевод свящ. Леонида Лутковского",
             "csl" => "Церковнославянский перевод (Гражданский шрифт)",
-            "ubio" => "Біблія в пер. Івана Огієнка",
-            "kjv" => "King James Version",
+//            "ubio" => "Біблія в пер. Івана Огієнка",
+//            "kjv" => "King James Version",
             "deu" => "Deutsche Luther",
             "bel" => "Беларускі пераклад",
-            "rom" => "Română traducere",
+//            "rom" => "Română traducere",
             "spa" => "Traducción al español",
             "fra" => "Traduction française",
             "ell" => "Ελληνική μετάφραση",
@@ -116,6 +124,8 @@ class MySettingsPage {
             $new_input['default_trans'] = key_exists($input['default_trans'], $this->get_translations()) ? $input['default_trans'] : null;
         }
 
+        $new_input['make_link'] = $input['make_link'] === '1' ? 1 : 0;
+
         return $new_input;
     }
 
@@ -130,6 +140,10 @@ class MySettingsPage {
         }
 
         echo '</select>';
+    }
+
+    public function make_link_callback() {
+        echo '<input type="checkbox" name="bop_general[make_link]" value="1" ' . checked($this->options["make_link"], true, false) . ' />';
     }
 }
 

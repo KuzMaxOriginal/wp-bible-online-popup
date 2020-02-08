@@ -24,13 +24,13 @@ jQuery(function ($) {
     };
 
     $(".bop-ref").mouseenter(function () {
-        let $popup = $('<div class="bop-popup"></div>')
+        let $popup = $('<div class="bop-popup"></div>');
 
         let $popup_loading = $('<div class="bop-popup-loading">' + spinner + '</div>');
         $popup.append($popup_loading);
 
         let $popup_close = $('<div class="bop-popup-close"></div>');
-        $popup.append($popup_close)
+        $popup.append($popup_close);
 
         // Calculate position
 
@@ -66,10 +66,11 @@ jQuery(function ($) {
                 }
 
                 let title = json[0].h2;
-                let href = "https://bibleonline.ru/search/?s=" + encodeURIComponent(json[0].h2);
+                let href = $(this).data("make_link") === 1
+                    ? " href='https://bibleonline.ru/search/?s=" + encodeURIComponent(json[0].h2) + "'" : "";
 
                 let $popup_title = $('<div class="bop-popup-title">' +
-                    '<a href="' + href + '" target="_blank">' + title + '</a></div>');
+                    '<a ' + href + ' target="_blank">' + title + '</a></div>');
                 let $popup_content = $('<div class="bop-popup-content"></div>');
 
                 for (let i = 1; i < json.length; i++) {

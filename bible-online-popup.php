@@ -15,12 +15,14 @@ require_once "tiny-mce.php";
 
 function bible_popup_func($atts, $content = "") {
     $options_defaults = [
-        "default_trans" => "rst66"
+        "default_trans" => "rst66",
+        "make_link" => 1,
     ];
     $options = wp_parse_args(get_option("bop_general"), $options_defaults);
 
     $query = isset($atts["query"]) ? $atts["query"] : "";
     $trans = isset($atts["trans"]) ? $atts["trans"] : "";
+    $make_link = isset($atts["make_link"]) ? $atts["make_link"] : "";
 
     if (!$query) {
         $query = "$content";
@@ -30,7 +32,12 @@ function bible_popup_func($atts, $content = "") {
         $trans = $options["default_trans"];
     }
 
-    $html = '<a class="bop-ref" data-query="' . $query . '" data-trans="' . $trans . '">' . $content . '</a>';
+    if (!$make_link) {
+        $make_link = $options["make_link"];
+    }
+
+    $html = '<a class="bop-ref" data-query="' . $query . '" data-trans="' . $trans .
+        '" data-make_link="' . $make_link . '">' . $content . '</a>';
 
     return $html;
 }
