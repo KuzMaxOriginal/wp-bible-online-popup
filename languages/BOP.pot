@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2020-02-07T09:28:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
-"X-Domain: bible-online-popup\n"
+"X-Domain: BOP\n"
 
 #. Plugin Name of the plugin
 msgid "Bible Online Popup"

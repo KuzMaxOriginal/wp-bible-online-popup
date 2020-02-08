@@ -6,6 +6,8 @@
  * Version: 1.0.0
  * Author: Maksim Kuzmin
  * License: GPL2
+ * Text Domain: BOP
+ * Domain Path: /languages/
  */
 
 require_once "settings-page.php";
