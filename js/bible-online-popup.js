@@ -16,6 +16,13 @@ jQuery(function ($) {
         return Math.min(popup_width, $(window).width() - popup_padding * 2);
     };
 
+    // Workaround for BibleOnline's API bug
+
+    let parseAjaxResponse = function (responseText) {
+        let trimmed = responseText.replace(/^\(|\);$/g, '');
+        return JSON.parse(trimmed);
+    };
+
     $(".bop-ref").mouseenter(function () {
         let $popup = $('<div class="bop-popup"></div>')
 
@@ -50,7 +57,7 @@ jQuery(function ($) {
                 return response.text();
             })
             .then((text) => {
-                let json = eval(text);
+                let json = parseAjaxResponse(text);
 
                 if (json.length < 1 || !json[0].hasOwnProperty("h2")) {
                     return;
@@ -90,6 +97,6 @@ jQuery(function ($) {
     });
 
     $(document).on("click", ".bop-popup-close", function () {
-       $(this).parent(".bop-popup").remove();
+        $(this).parent(".bop-popup").remove();
     });
 });
