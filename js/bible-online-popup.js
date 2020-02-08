@@ -52,6 +52,8 @@ jQuery(function ($) {
         let query_trans = encodeURIComponent($(this).data("trans"));
         let query_q = encodeURIComponent($(this).data("query"));
 
+        // API reference: https://bibleonline.docs.apiary.io/#
+
         fetch('https://api.bibleonline.ru/bible?trans=' + query_trans + '&q=' + query_q)
             .then((response) => {
                 return response.text();
