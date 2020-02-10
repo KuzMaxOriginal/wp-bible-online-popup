@@ -1,6 +1,6 @@
 <?php
 
-class MySettingsPage {
+class BOP_SettingsPage {
     /**
      * Holds the values to be used in the fields callbacks
      */
@@ -147,5 +147,6 @@ class MySettingsPage {
     }
 }
 
-if (is_admin())
-    $my_settings_page = new MySettingsPage();
+if (is_admin()) {
+    $my_settings_page = new BOP_SettingsPage();
+}

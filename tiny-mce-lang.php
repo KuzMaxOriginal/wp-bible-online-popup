@@ -8,7 +8,7 @@ if (!defined('ABSPATH'))
 if (!class_exists('_WP_Editors'))
     require(ABSPATH . WPINC . '/class-wp-editor.php');
 
-function my_custom_tinymce_plugin_translation() {
+function bop_tinymce_plugin_translation() {
     $strings = array(
         'buttonTitle' => __('Make a Bible Popup from selection', 'BOP'),
     );
@@ -18,4 +18,4 @@ function my_custom_tinymce_plugin_translation() {
     return $translated;
 }
 
-$strings = my_custom_tinymce_plugin_translation();
+$strings = bop_tinymce_plugin_translation();
