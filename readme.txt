@@ -53,3 +53,6 @@ Russian.
 
 == Installation ==
 Just upload the plugin and follow WordPress installation instructions. After installation and activation, go to Bible Online Popup settings page under \"Settings\" admin menu and adjust preferences.
+
+== Screenshots ==
+1. Example of working popup
